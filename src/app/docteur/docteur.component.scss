@@ -4,3 +4,42 @@ h3{
     font-size: 30px;
     font-weight: 500;
 }
+
+table{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    margin-top: 25px;
+    text-align: center;
+
+}
+th{
+    padding: 15px;
+}
+thead{
+    background-color: #353558;
+    text-align: center;
+    color: white;
+    
+letter-spacing: 1px;
+}
+
+.pg{
+    justify-content:center;
+}
+
+.card{
+    margin-top: 4%;
+    margin-bottom: auto;
+}
+
+
+.bi-pencil-square{
+    margin-left: 10px;
+    color: green
+}
+.bi-trash3-fill{
+    border: 1px solid #353558;
+    padding: 3px;
+}

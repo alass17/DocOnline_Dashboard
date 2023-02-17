@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="tout">
+    <div class="image">
+        <img src="../../assets/img/Rectangle 62 (1).png" alt="">
+    </div>
+
+    <div class="div">
+        <form>
+        <div class="row mb-3">
+            <label for="formGroupExampleInput ">Nom</label>
+            <input type="text "  value="{{modif.nom}}" [(ngModel)]="modif.nom"  name="nom" class="form-control" placeholder="Adresse e-mail">
+          </div>
+        <div class="row mb-3">
+            <label for="formGroupExampleInput ">Numéro</label>
+            <input type="text " [(ngModel)]="modif.numero" name="numero" class="form-control" placeholder="Adresse e-mail">
+          </div>
+    
+          <div class="row mb-3">
+            <label for="formGroupExampleInput">Email</label>
+            <input type="text" id= "numero" ngModel="{{ user.email }}" [(ngModel)]="modif.email" name="email" class="form-control" placeholder="Numéro de téléphone">
+          </div>
+    
+          <div class="row">
+            <label for="formGroupExampleInput">Adresse</label>
+            <input type="text"   [(ngModel)]="modif.adresse" name="adresse"   class="form-control" placeholder="Adresse">
+          </div>
+
+        </form>
+        <button type="button" class="valider1" style="margin-left: -10px ;" (click)="onSubmit()">Valider</button>
+    </div>
+    
+</div>
+
+<div class="text">
+    <p style="font-size:16px;margin-top: 25px;margin-bottom: 25px;">Pour changer le mot de passe ou l’adresse mail de votre compte, tapez votre mot de passe actuel.</p>
+</div>
+
+<form action="">
+<div class="row m-2">
+    
+    <div class="col ">
+        <label for="formGroupExampleInput ">Mot de passe actuel</label>
+        <input type="text "  [(ngModel)]="modif1.currentpassword" name="currentpassword" class="form-control" placeholder="Adresse e-mail">
+      </div>
+
+      <div class="col ">
+        <label for="formGroupExampleInput">Nouveau mot de passe</label>
+        <input type="text" id= "numero" [(ngModel)]="modif1.newpassword" name="newpassword" class="form-control" placeholder="Numéro de téléphone">
+      </div>
+
+      <div class="col">
+        <label for="formGroupExampleInput">Confirmer</label>
+        <input type="text"  [(ngModel)]="modif1.confirmpassword" name="confirmpassword"  class="form-control" placeholder="Adresse">
+      </div>
+
+</div>
+<button type="button" class="valider" style="float: right; margin-right: 19px;" (click)="ModifierMotdepasse()">Valider</button>
+
+</form>
+</div>

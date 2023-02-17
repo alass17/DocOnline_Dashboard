@@ -51,10 +51,13 @@
 
 
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="sideBarOpen">
-        <app-sidebar></app-sidebar>
-    </mat-drawer>
-<mat-drawer-content>
-    <app-header (toogleSidebarForMe)="sideBarToggler()"></app-header>
-    <router-outlet></router-outlet>
-</mat-drawer-content>
+  <mat-drawer mode="side" [opened]="sideBarOpen" *ngIf="isLoggedIn">
+      <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+      <app-header (toogleSidebarForMe)="sideBarToggler()" *ngIf="isLoggedIn"></app-header>
+      <app-line-chart></app-line-chart>
+      
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

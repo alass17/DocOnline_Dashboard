@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row tout">
+                
+                <div class="col"></div>
+                <div class="col-4 img">
+            
+                </div>
+                <div class="col-4">
+                    <div class="login-box">
+                        <h2>Connexion</h2>
+                        <form #form1="ngForm" class="" *ngIf="!isLoggedIn"
+                        name="form"
+                        (ngSubmit)="f.form.valid && onSubmit()"
+                        #f="ngForm"
+                        novalidate>
+                          <div class="user-box">
+                            <input type="text" name="numeroOrEmail"
+                            [(ngModel)]="form.numeroOrEmail"
+                            required
+                            #numeroOrEmail="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && numeroOrEmail.errors }">
+                            <label>Email ou numéro de téléphone</label>
+                            <div *ngIf="numeroOrEmail.errors && f.submitted" class="invalid-feedback">
+                                Numero ou email obligatoire !
+                              </div>
+                          </div>
+                          <div class="user-box">
+                            <input type="password" name="password"
+                            [(ngModel)]="form.password"
+                            required
+                            minlength="6"
+                            #password="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                            <label>Mot de passe</label>
+                            <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                                <div *ngIf="password.errors['required']">Mot de passe obligatoire !</div>
+                                <div *ngIf="password.errors['minlength']">
+                                  Le mot de passe doit avoir 6caractères au moins.
+                                </div>
+                              </div>
+                          </div>
+                         
+                          <a class="connect" href="#">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <button type="submit">
+                             Connecter</button>
+                          </a>
+                        
+                        </form>
+                      </div>
+                </div>
+        
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</div>

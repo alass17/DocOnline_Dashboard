@@ -1,5 +1,8 @@
   import { outputAst } from '@angular/compiler';
 import { Component,EventEmitter,Output, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth/auth.service';
+import { StorageService } from '../_services/storage/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +11,8 @@ import { Component,EventEmitter,Output, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 @Output() toogleSidebarForMe:EventEmitter<any>=new EventEmitter();
-  constructor() { }
+  constructor(private authService:AuthService,private storageService:StorageService,private route:Router
+) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +21,17 @@ export class HeaderComponent implements OnInit {
     this.toogleSidebarForMe.emit();
   }
 
+
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: res => {
+        console.log(res);
+        this.storageService.clean();
+        this.route.navigate(['/login'])
+      },
+      error: err => {
+        console.log(err);
+      }
+    });
+  }
 }

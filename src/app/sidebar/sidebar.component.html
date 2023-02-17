@@ -121,17 +121,23 @@
     </a>
   </div> -->
 
+  
   <mat-nav-list>
-    <div class="logo">
-        <img src="../../assets/img/DocOnLigne-removebg-preview 3.png" alt="Logo">
+    <div class="menu-header-bg"></div>
+    <div class="header-content">
+      <img src="../../assets/img/Rectangle 62 (1).png" alt="" routerLink="/profil">
+      <label>
+        <h2>Alasko</h2>
+        <p>Administrateur</p>
+      </label>
     </div>
-    <mat-divider></mat-divider>
-    <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+    
+    <div class="reste" style="margin-top: 130px !important;">
     <a mat-list-item routerLink="/acceuil" routerLinkActive="list-item-active">
         <mat-icon>home</mat-icon>Acceuil
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active">
+    <a mat-list-item routerLink="/patient" routerLinkActive="list-item-active">
         <mat-icon>person</mat-icon>Patients
     </a>
 
@@ -142,4 +148,5 @@
     <a mat-list-item routerLinkActive="list-item-active">
         <mat-icon>appointment</mat-icon>Rendez-vous
     </a>
+  </div>
   </mat-nav-list>

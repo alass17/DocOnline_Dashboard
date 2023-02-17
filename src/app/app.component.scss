@@ -121,10 +121,11 @@
 
 mat-drawer{
     width: 260px;
-    background: rgb(24, 24, 58);
+    background: rgb(255, 255, 255);
 }
 
 mat-drawer-container{
     height: 100%;
+    display: contents;
 
 }
