@@ -1,201 +1,294 @@
-html {
-    height: 100%;
-  }
-//   body {
-//     margin:0;
-//     padding:0;
+// html {
+//     height: 100%;
+//   }
+// //   body {
+// //     margin:0;
+// //     padding:0;
+// //     color: black;
+// //     font-family: sans-serif;
+// //     background: linear-gradient(#141e30, #243b55);
+// //   }
+  
+//   .login-box {
+//     // position: absolute;
+//     // top: 50%;
+//     // left: 50%;
+//     width: 400px;
 //     color: black;
-//     font-family: sans-serif;
-//     background: linear-gradient(#141e30, #243b55);
+//     padding: 40px;
+//     // transform: translate(-50%, -50%);
+//     background: white;
+  
+//     box-sizing: border-box;
+//     // box-shadow: 0 15px 25px rgba(229, 224, 224, 0.6);
+//     border-radius: 10px;
 //   }
   
-  .login-box {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    width: 400px;
-    color: black;
-    padding: 40px;
-    // transform: translate(-50%, -50%);
-    background: white;
-  
-    box-sizing: border-box;
-    // box-shadow: 0 15px 25px rgba(229, 224, 224, 0.6);
-    border-radius: 10px;
-  }
-  
-  .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
+//   .login-box h2 {
+//     margin: 0 0 30px;
+//     padding: 0;
     
-    text-align: center;
-    color: black;
-  }
+//     text-align: center;
+//     color: black;
+//   }
   
-  .login-box .user-box {
-    position: relative;
-  }
+//   .login-box .user-box {
+//     position: relative;
+//   }
   
-  .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: black;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid black;;
-    outline: none;
-    background: transparent;
-  }
-  .login-box .user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: black;
-    pointer-events: none;
-    transition: .5s;
-  }
+//   .login-box .user-box input {
+//     width: 100%;
+//     padding: 10px 0;
+//     font-size: 16px;
+//     color: black;
+//     margin-bottom: 30px;
+//     border: none;
+//     border-bottom: 1px solid black;;
+//     outline: none;
+//     background: transparent;
+//   }
+//   .login-box .user-box label {
+//     position: absolute;
+//     top:0;
+//     left: 0;
+//     padding: 10px 0;
+//     font-size: 16px;
+//     color: black;
+//     pointer-events: none;
+//     transition: .5s;
+//   }
   
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: black;
-    font-size: 12px;
-  }
+//   .login-box .user-box input:focus ~ label,
+//   .login-box .user-box input:valid ~ label {
+//     top: -20px;
+//     left: 0;
+//     color: black;
+//     font-size: 12px;
+//   }
   
-  .login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px
-  }
+//   .login-box form a {
+//     position: relative;
+//     display: inline-block;
+//     padding: 10px 20px;
+//     color: black;
+//     font-size: 16px;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     overflow: hidden;
+//     transition: .5s;
+//     margin-top: 40px;
+//     letter-spacing: 4px
+//   }
   
-  .login-box a:hover {
-    background: rgb(69, 81, 119);
-    color:white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #dee1e1,
-                0 0 25px #eff4f4,
-                0 0 50px #fdffff,
-                0 0 100px #ebeeee;
-  }
+//   .login-box a:hover {
+//     background: rgb(69, 81, 119);
+//     color:white;
+//     border-radius: 5px;
+//     box-shadow: 0 0 5px #dee1e1,
+//                 0 0 25px #eff4f4,
+//                 0 0 50px #fdffff,
+//                 0 0 100px #ebeeee;
+//   }
   
-  .login-box a span {
-    position: absolute;
-    display: block;
-  }
+//   .login-box a span {
+//     position: absolute;
+//     display: block;
+//   }
   
-  .login-box a span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #151616);
-    animation: btn-anim1 1s linear infinite;
-  }
+//   .login-box a span:nth-child(1) {
+//     top: 0;
+//     left: -100%;
+//     width: 100%;
+//     height: 2px;
+//     background: linear-gradient(90deg, transparent, #151616);
+//     animation: btn-anim1 1s linear infinite;
+//   }
   
-  @keyframes btn-anim1 {
-    0% {
-      left: -100%;
-    }
-    50%,100% {
-      left: 100%;
-    }
-  }
+//   @keyframes btn-anim1 {
+//     0% {
+//       left: -100%;
+//     }
+//     50%,100% {
+//       left: 100%;
+//     }
+//   }
   
-  .login-box a span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #101010);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s
-  }
+//   .login-box a span:nth-child(2) {
+//     top: -100%;
+//     right: 0;
+//     width: 2px;
+//     height: 100%;
+//     background: linear-gradient(180deg, transparent, #101010);
+//     animation: btn-anim2 1s linear infinite;
+//     animation-delay: .25s
+//   }
   
-  @keyframes btn-anim2 {
-    0% {
-      top: -100%;
-    }
-    50%,100% {
-      top: 100%;
-    }
-  }
+//   @keyframes btn-anim2 {
+//     0% {
+//       top: -100%;
+//     }
+//     50%,100% {
+//       top: 100%;
+//     }
+//   }
   
-  .login-box a span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #151515);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s
-  }
+//   .login-box a span:nth-child(3) {
+//     bottom: 0;
+//     right: -100%;
+//     width: 100%;
+//     height: 2px;
+//     background: linear-gradient(270deg, transparent, #151515);
+//     animation: btn-anim3 1s linear infinite;
+//     animation-delay: .5s
+//   }
   
-  @keyframes btn-anim3 {
-    0% {
-      right: -100%;
-    }
-    50%,100% {
-      right: 100%;
-    }
-  }
+//   @keyframes btn-anim3 {
+//     0% {
+//       right: -100%;
+//     }
+//     50%,100% {
+//       right: 100%;
+//     }
+//   }
   
-  .login-box a span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #121313);
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s
-  }
+//   .login-box a span:nth-child(4) {
+//     bottom: -100%;
+//     left: 0;
+//     width: 2px;
+//     height: 100%;
+//     background: linear-gradient(360deg, transparent, #121313);
+//     animation: btn-anim4 1s linear infinite;
+//     animation-delay: .75s
+//   }
   
-  @keyframes btn-anim4 {
-    0% {
-      bottom: -100%;
-    }
-    50%,100% {
-      bottom: 100%;
-    }
-  }
-  .connect:hover{
-    color: #eff4f4 !important;
-  }
-  .tout{
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto  ;
-    // width: 0%;
+//   @keyframes btn-anim4 {
+//     0% {
+//       bottom: -100%;
+//     }
+//     50%,100% {
+//       bottom: 100%;
+//     }
+//   }
+//   .connect:hover{
+//     color: #eff4f4 !important;
+//   }
+//   .tout{
+//     // margin-top: 10%;
+//     margin-left: auto;
+//     margin-right: auto  ;
+//     // width: 0%;
+//   }
+
+//   .img{
+//     background-image: url(../../assets/img/logo.png);
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+    
+//   }
+
+//   .card{
+//     width: 90%;
+//     // margin-top: 30px;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+//   .btn:hover{
+//     background:rgb(69, 81, 119);
+//   }
+
+//   .btn{
+//     background-color: #dee1e1;
+//   }
+
+// .tout{
+//   display: grid;
+//   grid-template-columns: auto auto;
+//   background-color:white;
+//   border: 1px solid whitesmoke;
+//   border-radius: 15px;
+//   box-shadow: rgb(214, 209, 209);
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 6%;
+// }
+
+
+
+.bouton{
+  border: 1px solid #353558;
+  border-radius: 5px;
+  background-color: #353558;
+  color: white;
+  font-size: 25px !important;
+  padding: 10px;
+  text-align: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: 30px;
+display: flex;
+justify-content: center ;
+width: 50%;
+}
+.bouton:hover{
+  background-color: #368E8C;
+  border: 1px solid #368E8C;
+}
+
+
+form .button input:disabled {
+  background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+  opacity: 0.7;
+}
+
+span.help-block {
+  color: #6A9A8B;
+}
+
+
+form .button{
+  width:60%;
+  height: 45px;
+  margin-left: 20%;
+}
+
+form .button input{
+  height: 100%;
+  width: 80%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background-color: #368E8C;
+
+  
+  // background: linear-gradient(135deg,  #6A9A8B, #00754B);
+
+}
+.flexbuttton{
+  display: flex;
+  justify-content: center;
+  span{
+      // height:30px ;
+      // width: 100%;
+      outline: none;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      font-size: 18px;
+      font-weight: 500px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      background-color: #368E8C;
+
+      // background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+
   }
 
-  .img{
-    background-image: url(../../assets/img/images.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    
-  }
-
-  .card{
-    width: 90%;
-    margin-top: 5%;
+  .button{
     margin-left: auto;
     margin-right: auto;
   }
-  .btn:hover{
-    background:rgb(69, 81, 119);
-  }
-
-  .btn{
-    background-color: #dee1e1;
-  }
+}

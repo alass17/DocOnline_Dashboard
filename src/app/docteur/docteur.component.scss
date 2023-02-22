@@ -1,3 +1,5 @@
+@import"../acceuil/acceuil.component.scss";
+
 h3{
     text-align: center;
     margin-top: 20px;
@@ -37,9 +39,107 @@ letter-spacing: 1px;
 
 .bi-pencil-square{
     margin-left: 10px;
-    color: green
+    color: green;
+    margin-right: 10px;
 }
-.bi-trash3-fill{
+.pagination{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 4px;
+     font-size: 15px !important;
+}
+// ::np-deep{
+
+// .ngx-pagination li{
+//     width: 35px;
+//     height: 35px;
+//     border-radius: 50%;
+//     background: #f8f8F8;
+//     display: flex !important;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+// }
+// .ngx-pagination li.small-screen{
+//         display: none !important;
+    
+//     }
+//     .ngx-pagination li.pagination-previous,&.pagination-next{
+//     a,span{
+//          width: 100%;
+//         height: 100%;
+//         border-radius: 50%;
+//         overflow: hidden;
+//         color: #f8f8f8;
+//     }
+    
+//     }
+
+
+// .ngx-pagination .pagination-previous a:before,
+// .ngx-pagination .pagination-previous.disabled:before,
+// .ngx-pagination .pagination-next::before{
+//     margin-right: 0px !important;
+//     font-size: 26px;
+//     margin-top: -8px;
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 50%;
+//     // border: 1px solid red;
+//     display: flex !important;
+//     justify-content: center;
+//     align-items: center;
+//     color:#2199e8;
+//     left: 0;
+//     // top: 0px;
+//     pointer-events: none;
+// }
+
+// .ngx-pagination .pagination-next::before{
+//     content: '\bb';
+// }
+// .ngx-pagination .pagination-next::after{
+//     display: none !important;
+// }
+// .ngx-pagination .pagination-previous.disabled.pagination-previous.disabled:before,
+// .ngx-pagination .pagination-next.disabled:before{
+//     opacity: 0.4;
+// }
+// .ngx-pagination .pagination-previous.disabled:hover{
+// background: #f8f8f8 !important;
+// }
+// .ngx-pagination a:hover,.ngx-pagination button:hover{
+//     background: initial !important;
+
+// }
+
+.bouton{
     border: 1px solid #353558;
-    padding: 3px;
+    border-radius: 5px;
+    background-color: #353558;
+    color: white;
+    font-size: 18px !important;
+    padding: 15px;
+
 }
+.bouton:hover{
+    background-color: #368E8C;
+    border: 1px solid #368E8C;
+}
+.bi-plus-circle{
+vertical-align: middle;
+    margin-right:1rem;
+    color: #FFFFFF !important;
+    
+}
+
+.input{
+    font-size: 16px !important;
+}
+button.btn-close {
+    font-size: 25px;
+    margin-top: -30px;
+}
+

@@ -1,37 +1,83 @@
-mat-toolbar{
+// mat-toolbar{
+//     position: sticky;
+//     top:0;
+//     z-index: 100;
+//     background: white;
+//     box-shadow: #dad4d4;
+//     border: 1px solid rgb(235, 225, 225);
+
+// }
+// ul{
+//     li{
+//         list-style: none;
+//     }
+// }
+// button{
+//     border: 0;
+//     outline: none;
+//     background: transparent;
+
+// }
+// .user{
+//     font-size: 14px;
+// }
+// .user-image{
+//     border-radius: 50%;
+//     width: 50px;
+//     height: 50px;
+// }
+// .user-image-icon{
+//     height: 18px;
+//     font-size: 16px;
+// }
+// ::ng-deep{
+//     .mat-menu-content{
+//         width: 160px;
+//     }
+// }
+
+mat-toolbar {
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 100;
     background: white;
     box-shadow: #dad4d4;
     border: 1px solid rgb(235, 225, 225);
-    
 }
-ul{
-    li{
+
+ul {
+    li {
         list-style: none;
     }
 }
-button{
-    border: 0;
-    outline: none;
-    background: transparent;
 
+button {
+    outline: none;
+    border: 0;
+    background: transparent;
 }
-.user{
+
+.user {
     font-size: 14px;
 }
-.user-image{
+
+mat-toolbar {
+    background: #f7f7f7;
+}
+
+.user-image {
     border-radius: 50%;
     width: 50px;
     height: 50px;
+
+    &-icon {
+        height: 18px;
+        font-size: 16px;
+    }
 }
-.user-image-icon{
-    height: 18px;
-    font-size: 16px;
-}
-::ng-deep{
-    .mat-menu-content{
+
+::ng-deep {
+    .mat-menu-content {
         width: 160px;
     }
 }

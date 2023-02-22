@@ -49,5 +49,11 @@ export class UserService {
     return this.http.put(`http://localhost:8080/admin/modifieradmin/${id}`,data)
 
   }
+
+
+  DeleteUser(id:number){
+    return this.http.delete(`http://localhost:8080/user/Supprimer/${id}`)
+
+  }
   
 }

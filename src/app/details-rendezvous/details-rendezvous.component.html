@@ -1,0 +1,34 @@
+<div class="container">
+    
+        
+            <div class="row tout">
+            
+                <div class="col-3">
+                    <img src="../../assets/img/step_1_make_an_appointment_3.png">
+                </div>
+                <div class="col-4">
+                    <div class="noms">
+                        <div class="tt ttt"> Nom medecin : <b>{{rdv.professionnel.nom}} </b></div>
+                        <div class="tt"> Email : <b>{{rdv.professionnel.email}} </b></div>
+                        <div class="tt"> Téléphone : <b>{{rdv.professionnel.numero}}</b></div>
+                        <!-- <div class="tt"> Profession :<b *ngFor="let s of profession"> {{s.libelle}}</b></div> -->
+                        <div class="tt"> Adresse : <b>{{rdv.professionnel.adresse}}</b></div>
+                        <div class="tt"> Date : <b>{{rdv.date}}</b></div>
+
+                        <div class="tt"> Heure de debut :<b>{{rdv.fuseauHoraire.timeStart}} </b></div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="noms">
+                        <div class="tt ttt"> Nom patient : <b>{{rdv.patient.nom}}</b></div>
+                        <div class="tt"> Email : <b>{{rdv.patient.email}}</b></div>
+                        <div class="tt"> Téléphone : <b>{{rdv.patient.numero}} </b></div>
+                        <!-- <div class="tt"> Profession :<b *ngFor="let s of profession"> {{s.libelle}}</b></div> -->
+                        <div class="tt"> Adresse : <b>{{rdv.patient.adresse}} </b></div>
+                        <div class="tt"> Objet : <b>{{rdv.objetRdv.libelle}} </b></div>
+                        <div class="tt"> Heure fin : <b>{{rdv.fuseauHoraire.timeEnd}} </b></div>
+                    </div>
+                </div>
+            </div>
+        </div>

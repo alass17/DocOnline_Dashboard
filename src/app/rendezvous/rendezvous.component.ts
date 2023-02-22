@@ -1,29 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { PatientService } from '../_services/Patient/patient.service';
+import { RendezVousService } from '../_services/rendez-vous/rendez-vous.service';
 
 @Component({
-  selector: 'app-patient',
-  templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.scss']
+  selector: 'app-rendezvous',
+  templateUrl: './rendezvous.component.html',
+  styleUrls: ['./rendezvous.component.scss']
 })
-export class PatientComponent implements OnInit {
-  patients: any;
-  delpatients: any;
+export class RendezvousComponent implements OnInit {
+  touslesrdvs: any;
   p:number=1
+  delrdv: any;
 
-  constructor(private patient:PatientService) { }
+  form:any={
+    libelle:null
+  }
+  objet: any;
+  constructor(private rendezvous:RendezVousService) { }
 
   ngOnInit(): void {
+this.rendezvous.getAllRendezVous().subscribe(data=>{
+  console.log(this.touslesrdvs)
+  this.touslesrdvs=data
+})
 
-    this.patient.getAllPatient().subscribe(data =>{
-      this.patients=data
-    })
   }
 
-  popDeletePatient(id_patient:number){
-   
-
+    
+    popDeleterdv(idrdv:number){
+    
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -44,8 +49,8 @@ export class PatientComponent implements OnInit {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          this.patient.DeletePatient(id_patient).subscribe(data=>{
-            this.delpatients=data
+          this.rendezvous.supprimerRendezVous(idrdv).subscribe(data=>{
+            this.delrdv=data
             console.log(data)
           })
           swalWithBootstrapButtons.fire(
@@ -64,7 +69,14 @@ export class PatientComponent implements OnInit {
         //   )**
           }
       })
-
-
+  
+  
     }
+
+  onSubmit(){
+    this.rendezvous.AjouterObjetRdv(this.form.libelle).subscribe(data=>{
+      this.objet=data;
+    })
+  }
+
 }

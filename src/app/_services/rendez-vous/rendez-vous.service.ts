@@ -60,4 +60,20 @@ affichertouslesrendezvousProf(id_professionnel:any){
   return this.http.get(`http://localhost:8080/rendezvous/mesrendezvousprof/${id_professionnel}`)
 }
 
+supprimerRendezVous(idrdv:any){
+  return this.http.delete(`http://localhost:8080/rendezvous/supprimer/${idrdv}`)
+}
+
+AjouterObjetRdv(libelle:any){
+  const data={
+    "libelle":libelle
+  }
+  return this.http.post(`http://localhost:8080/objet/ajouter`,data)
+}
+
+TrouverRendezVousParId(idrdv:any){
+  return this.http.get(`http://localhost:8080/rendezvous/troverrendezvousparid/${idrdv}`)
+}
+
+
 }

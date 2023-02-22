@@ -12,4 +12,12 @@ export class SpecialiteService {
     return this.http.get(`http://localhost:8080/specialite/afficher`);
 
   }
+
+  AjouterSpecialite(libelle:any):Observable<any>{
+    const data={
+      "libelle":libelle
+    }
+    return this.http.post(`http://localhost:8080/specialite/ajouter`,data);
+
+  }
 }

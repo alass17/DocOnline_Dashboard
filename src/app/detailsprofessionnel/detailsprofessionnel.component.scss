@@ -1,0 +1,56 @@
+
+
+  .tout{
+    margin-left: auto !important;
+    margin-right: auto !important;
+   
+  }
+
+  .card1{
+    // width:  30%;
+    margin: 20px;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
+  img{
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #353558;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .nomtt{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+    color: #353558;
+  }
+
+  .tt{
+    margin: 25px;
+    font-size: 16px;
+    border: 1px solid rgb(223, 220, 220);
+    border-radius: 5px;
+    padding: 10px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card2{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pagination{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 4px;
+  }

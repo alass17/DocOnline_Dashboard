@@ -110,22 +110,23 @@
 
 //     }
 // }
+//////////:::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+// :host{
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
 
-:host{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+// }
 
-}
+// mat-drawer{
+//     width: 260px;
+//     background: rgb(255, 255, 255);
+// }
 
-mat-drawer{
-    width: 260px;
-    background: rgb(255, 255, 255);
-}
+// mat-drawer-container{
+//     height: 100%;
+//     display: contents;
 
-mat-drawer-container{
-    height: 100%;
-    display: contents;
-
-}
+// }
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

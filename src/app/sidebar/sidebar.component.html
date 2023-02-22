@@ -1,4 +1,4 @@
-<!-- <section id="sidebar"> 
+<!--  <section id="sidebar"> 
     <div class="white-label">
     </div> 
     <div id="sidebar-nav">   
@@ -122,7 +122,7 @@
   </div> -->
 
   
-  <mat-nav-list>
+  <!-- <mat-nav-list>
     <div class="menu-header-bg"></div>
     <div class="header-content">
       <img src="../../assets/img/Rectangle 62 (1).png" alt="" routerLink="/profil">
@@ -145,8 +145,44 @@
         <mat-icon>person</mat-icon>Docteurs
     </a>
 
-    <a mat-list-item routerLinkActive="list-item-active">
+    <a mat-list-item routerLink="/rendezvous" routerLinkActive="list-item-active">
         <mat-icon>appointment</mat-icon>Rendez-vous
     </a>
   </div>
+  </mat-nav-list> -->
+
+
+
+  <mat-nav-list>
+    <div class="menu-header-bg"></div>
+    <div class="header-content">
+      <img src="../../assets/img/Rectangle 62 (1).png" alt="" routerLink="/profil">
+      <label>
+        <h2>Alasko</h2>
+        <p>Administrateur</p>
+      </label>
+    </div>
+
+    <div class="reste" style="margin-top: 130px !important;">
+    <div class="matSubheader">
+<h2  class="mt-2"> </h2>
+    </div>
+    
+    <mat-list-item routerLinkActive="dashboardControleFacile" class="hover"  routerLink="/acceuil">
+      <mat-icon>dashboard</mat-icon> <span>Accueil</span> 
+    </mat-list-item>
+  
+    <mat-list-item routerLinkActive="dashboardControleFacile" class="hover" routerLink="/patient">
+      <mat-icon>person</mat-icon> <span>Patient</span>
+    </mat-list-item>
+    
+    <mat-list-item routerLinkActive="dashboardControleFacile" class="hover" routerLink="/docteur">
+      <mat-icon>person</mat-icon> <span>Docteur</span>
+    </mat-list-item>
+    
+    <mat-list-item routerLinkActive="dashboardControleFacile" class="hover" routerLink="/rendezvous">
+      <mat-icon>school</mat-icon> <span>Rendez-vous</span>
+    </mat-list-item>
+    
+    </div>
   </mat-nav-list>

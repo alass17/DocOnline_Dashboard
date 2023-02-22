@@ -10,16 +10,34 @@ import { StorageService } from '../_services/storage/storage.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-@Output() toogleSidebarForMe:EventEmitter<any>=new EventEmitter();
+  @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
+  user: any;
+  monStatus: any;
   constructor(private authService:AuthService,private storageService:StorageService,private route:Router
 ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.user = this.storageService.getUser();
+    if(this.user.id != null ){
+     console.log(this.user.statusUser.idstatus)
+     this.monStatus = this.user.statusUser.idstatus
+    }
+  
   }
 
-  toggleSidebar(){
-    this.toogleSidebarForMe.emit();
+  toggleSidebar() {
+    this.toggleSidebarForMe.emit();
   }
+
+  // logout(): void {
+  //   this.tokenStorage.signOut();
+  //       // this.router.navigateByUrl('bottom-bar/accueil')
+  //   window.location.reload();
+  // }
+
+  // toggleSidebar(){
+  //   this.toogleSidebarForMe.emit();
+  // }
 
 
   logout(): void {
@@ -33,5 +51,9 @@ export class HeaderComponent implements OnInit {
         console.log(err);
       }
     });
+    
   }
+
+
+  
 }

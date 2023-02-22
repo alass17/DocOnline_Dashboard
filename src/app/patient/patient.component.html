@@ -1,3 +1,7 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-2">Patient</div>
+  <div class="page__content shadow p-3 position-relative">
+
 <div class="container-fluid">
     <div class="card">
       <div class="card-body ">
@@ -7,6 +11,8 @@
       <table class="table table-striped table-hover table-borderless " >
           <thead class="entete">
             <tr >
+              <th scope="col">N°</th>
+
               <th scope="col">Nom</th>
               <th scope="col">Numero</th>
               <th scope="col">Email</th>
@@ -15,7 +21,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let p of patients">
+            <tr *ngFor="let p of patients | paginate:{itemsPerPage:10,currentPage:p}">
+              <td>{{p.id}}</td>
               <td>{{p.nom}}</td>
               <td>{{p.numero}}</td>
               <td>{{p.email}}</td>
@@ -27,30 +34,33 @@
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
               </svg>
             
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16" [routerLink]="['/details-patients', p.id]">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
               </svg>
-              
+
             </td>
             </tr> 
            
             
           </tbody>
         </table>
+
+        <div class="pagination">
+          <pagination-controls (pageChange)="p=$event"></pagination-controls>
         </div>
-        <nav aria-label="...">
-          <ul class="pagination pagination-md pg">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" tabindex="-1">1</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-          </ul>
-        </nav>
+        </div>
+        
       </div>
+      
   </div> 
-  
-  
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+ 
+</div>
+</div>
+
+<style>
+/* p{
+  font-size: .5em;
+}
+</style>  */
   

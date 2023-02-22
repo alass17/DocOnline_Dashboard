@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { AuthService } from '../_services/auth/auth.service';
 import { StorageService } from '../_services/storage/storage.service';
 
@@ -9,6 +10,12 @@ import { StorageService } from '../_services/storage/storage.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+ clickrest=false
+ clicknorest=false
+    email:any
+
+  isForgetpass=false
   form: any = {
     numeroOrEmail: null,
     password: null
@@ -23,6 +30,8 @@ export class LoginComponent implements OnInit {
     this.roles = this.storageService.getUser().roles;
   }
   onSubmit(): void {
+
+    
     const { numeroOrEmail, password } = this.form;
 
     this.authService.connexion(numeroOrEmail, password).subscribe({
@@ -40,7 +49,17 @@ export class LoginComponent implements OnInit {
         console.log("Vous n'etes pas autorisé à vous connecter")
       }
 
-       
+       if(this.isLoggedIn = true){
+
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Connecter avec succès !!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+       }
         
       }
       
@@ -50,5 +69,24 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     window.location.reload();
   }
+
+  onResetpassword(form:any){
+    Swal.fire({
+         
+      icon: 'success',
+      title: 'Email envoyé à votre comte',
+      showConfirmButton: false,
+    
+    })
+  const email:string=form.emails
+  console.log(email)
+    this.authService.reinitialisermotdepasse(email).subscribe(data =>{
+      console.log(data)
+      
+    })
+  }
+
+
+  
 
 }

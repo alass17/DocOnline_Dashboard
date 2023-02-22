@@ -21,6 +21,12 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { ProfilComponent } from './profil/profil.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RendezvousComponent } from './rendezvous/rendezvous.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { DetailsprofessionnelComponent } from './detailsprofessionnel/detailsprofessionnel.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailsPatientsComponent } from './details-patients/details-patients.component';
+import { DetailsRendezvousComponent } from './details-rendezvous/details-rendezvous.component';
 
 @NgModule({
   declarations: [
@@ -33,20 +39,32 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     LineChartComponent,
          ProfilComponent,
+         RendezvousComponent,
+         PrincipalComponent,
+         DetailsprofessionnelComponent,
+         DetailsPatientsComponent,
+         DetailsRendezvousComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatDividerModule,
-    MatListModule,
-    HttpClientModule,
-    FormsModule
+
+     // * MATERIAL IMPORTS
+     MatSidenavModule,
+     MatToolbarModule,
+     MatMenuModule,
+     MatIconModule,
+     MatDividerModule,
+     MatListModule,
+     FormsModule,
+     HttpClientModule,
+    NgxPaginationModule,
+     FormsModule,
+   
+
+     
+    //  PopoverController
   ],
   providers: [],
   bootstrap: [AppComponent]
