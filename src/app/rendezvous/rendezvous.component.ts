@@ -55,7 +55,7 @@ this.rendezvous.getAllRendezVous().subscribe(data=>{
           })
           swalWithBootstrapButtons.fire(
             'Supprimer!',
-            'Votre fichier a été supprimé avec succès.',
+            'Le rendez-vous a été supprimé avec succès.',
             'success'
           )
         // } else if (
@@ -73,10 +73,22 @@ this.rendezvous.getAllRendezVous().subscribe(data=>{
   
     }
 
-  onSubmit(){
-    this.rendezvous.AjouterObjetRdv(this.form.libelle).subscribe(data=>{
-      this.objet=data;
-    })
-  }
+    onSubmit(){
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Objet ajouté avec succès !!',
+        showConfirmButton: false,
+        timer: 1500,
+       
+      })
+      this.rendezvous.AjouterObjetRdv(this.form.libelle).subscribe(data=>{
+        this.objet=data;
+        
+      })
+  
+      
+    }
 
 }

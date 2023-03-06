@@ -50,10 +50,7 @@ export class RendezVousService {
   }
 
 
-getAllRendezvousForProfessionnel(professionnelId:any){
-  return this.http.get(`http://localhost:8080/rendezvous/patients/${professionnelId}`)
 
-}
 
 
 affichertouslesrendezvousProf(id_professionnel:any){
@@ -73,6 +70,12 @@ AjouterObjetRdv(libelle:any){
 
 TrouverRendezVousParId(idrdv:any){
   return this.http.get(`http://localhost:8080/rendezvous/troverrendezvousparid/${idrdv}`)
+}
+
+
+getAllRendezvousForProfessionnel(professionnelId:any){
+  return this.http.get(`http://localhost:8080/rendezvous/patients/${professionnelId}`)
+
 }
 
 

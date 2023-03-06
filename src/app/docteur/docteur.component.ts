@@ -27,54 +27,63 @@ export class DocteurComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.docteur.getAllProfessionnel().subscribe(data =>{
-      this.docteurs=data
-      console.log(data)
-    this.totaldocteurs=data.length
-    })
+   this.getAllProf()
     this.spec.getAllSpecialite().subscribe(data =>{
       this.specs=data
     })
   }
-  popDeletePatient(id_patient:number){
+  // popDeletePatient(id_patient:number){
     
-    Swal.fire({
-      position:'center',
-      title: 'Voulez-vous supprimer ?',
-      showDenyButton: true,
-      showCancelButton: false,
-      confirmButtonText: 'Oui',
-      denyButtonText: `Non`,
-      imageUrl:'../../assets/img/38213-error.gif',
-      imageWidth:'  250px',
-      imageHeight:'250px',
-      denyButtonColor:'red',
-      // cancelButtonText: 'Annuler',
-      cancelButtonColor:'red',
-      confirmButtonColor: 'green',
-      heightAuto: false,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-        //Swal.fire('Saved!', '', 'success');
-        this.docteur.DeleteProf(id_patient).subscribe(data=>{
-          this.delprof=data
-          console.log(data)
+  //   Swal.fire({
+  //     position:'center',
+  //     title: 'Voulez-vous supprimer ?',
+  //     showDenyButton: true,
+  //     showCancelButton: false,
+  //     confirmButtonText: 'Oui',
+  //     denyButtonText: `Non`,
+  //     imageUrl:'../../assets/img/38213-error.gif',
+  //     imageWidth:'  250px',
+  //     imageHeight:'250px',
+  //     denyButtonColor:'red',
+  //     // cancelButtonText: 'Annuler',
+  //     cancelButtonColor:'red',
+  //     confirmButtonColor: 'green',
+  //     heightAuto: false,
+  //   }).then((result) => {
+  //     /* Read more about isConfirmed, isDenied below */
+  //     if (result.isConfirmed) {
+  //       //Swal.fire('Saved!', '', 'success');
+  //       this.docteur.DeleteProf(id_patient).subscribe(data=>{
+
+  //         this.delprof=data
+  //         console.log(data)
           
-        });
-       
-      } else if (result.isDenied) {
-        //Swal.fire('Changes are not saved', '', 'info');
-      //  this.route.navigate(['tirage'])
-      }
-    });
+  //       });
+  //        this.getAllProf()
+  //     } else if (result.isDenied) {
+  //       //Swal.fire('Changes are not saved', '', 'info');
+  //     //  this.route.navigate(['tirage'])
+  //     }
+  //   });
       
-  }
+  // }
 
   onSubmit(){
+    this.getAllProf()
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Specialité ajoutée avec succès !!',
+      showConfirmButton: false,
+      timer: 1500,
+     
+    })
     this.spec.AjouterSpecialite(this.form.libelle).subscribe(data=>{
       this.specialites=data;
+      
     })
+
+    
   }
 
 
@@ -105,12 +114,16 @@ export class DocteurComponent implements OnInit {
         this.docteur.DeleteProf(id_patient).subscribe(data=>{
           this.delprof=data
           console.log(data)
-        })
+          
+        }
+        )
         swalWithBootstrapButtons.fire(
           'Supprimer!',
-          'Votre fichier a été supprimé avec succès.',
+          'Professionnel supprimé avec succès.',
           'success'
         )
+
+        this.getAllProf()
       // } else if (
       //   /* Read more about handling dismissals below */
       //   result.dismiss === Swal.DismissReason.cancel
@@ -133,5 +146,13 @@ export class DocteurComponent implements OnInit {
 
   reload(){
     window.location.reload()
+  }
+
+  getAllProf(){
+    this.docteur.getAllProfessionnel().subscribe(data =>{
+      this.docteurs=data
+      console.log(data)
+    this.totaldocteurs=data.length
+    })
   }
 }

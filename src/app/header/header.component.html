@@ -32,18 +32,23 @@
       <div class="row mr-2 ml-auto">
         <ul class="row m-0 align-items-center">
           <li>
-            <button
+            <!-- <button
               mat-button
               [matMenuTriggerFor]="menu"
               class="user mt-2 d-flex align-items-center"
-            >
-              <img src="../../assets/img/Rectangle 62 (1).png" alt="" class="user-image mr-1 p-2" />
+            > -->
+              <!-- <img src="../../assets/img/Rectangle 62 (1).png" alt="" class="user-image mr-1 p-2" /> -->
   
-              {{user.nom}}
-              <mat-icon class="user-image-icon ml-1"
+              <!-- {{user.nom}} -->
+              <!-- <mat-icon class="user-image-icon ml-1"
                 >keyboard_arrow_down</mat-icon
-              >
-            </button>
+              > -->
+
+              
+                 <img class="logo" src="../../assets/img/logoremove.png" alt="">
+
+             
+            <!-- </button> -->
             <mat-menu #menu="matMenu">
               <button  (click)="logout()" mat-menu-item routerLink="/connexion" >
                 <mat-icon >exit_to_app</mat-icon>             

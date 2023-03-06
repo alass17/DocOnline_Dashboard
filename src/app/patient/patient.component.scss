@@ -38,8 +38,13 @@ letter-spacing: 1px;
 
 
 .bi-pencil-square{
-    margin-left: 10px;
+    margin-left: 10px !important;
     color: green;
-    margin-right: 10px;
+    // margin-right: 10px;
+   
+}
+
+svg.bi.bi-info-circle {
+    margin-left: 12px;
 }
 

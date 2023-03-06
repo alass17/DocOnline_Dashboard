@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
     Swal.fire({
          
       icon: 'success',
-      title: 'Email envoyé à votre comte',
+      title: 'Email envoyé à votre compte',
       showConfirmButton: false,
     
     })

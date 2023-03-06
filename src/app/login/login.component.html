@@ -98,13 +98,13 @@
                   </div>
                   <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com"
-                      name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel"
+                      name="password" [(ngModel)]="form.password" required minlength="8" #password="ngModel"
                       [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
                     <label for="floatingInput">Mot de passe</label>
                     <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
                       <div *ngIf="password.errors['required']">Mot de passe obligatoire !</div>
                       <div *ngIf="password.errors['minlength']">
-                        Le mot de passe doit avoir 6caractères au moins.
+                        Le mot de passe doit avoir 8 caractères au moins.
                       </div>
                     </div>
                   </div>

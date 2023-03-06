@@ -12,16 +12,16 @@ import { StorageService } from '../_services/storage/storage.service';
 export class HeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
   user: any;
-  monStatus: any;
+  // monStatus: any;
   constructor(private authService:AuthService,private storageService:StorageService,private route:Router
 ) { }
 
   ngOnInit() {
     this.user = this.storageService.getUser();
-    if(this.user.id != null ){
-     console.log(this.user.statusUser.idstatus)
-     this.monStatus = this.user.statusUser.idstatus
-    }
+    // if(this.user.id != null ){
+    //  console.log(this.user.statusUser.idstatus)
+    //  this.monStatus = this.user.statusUser.idstatus
+    // }
   
   }
 

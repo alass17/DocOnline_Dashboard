@@ -15,10 +15,9 @@ export class PatientComponent implements OnInit {
   constructor(private patient:PatientService) { }
 
   ngOnInit(): void {
+    this.getAllPatient()
 
-    this.patient.getAllPatient().subscribe(data =>{
-      this.patients=data
-    })
+  
   }
 
   popDeletePatient(id_patient:number){
@@ -47,12 +46,16 @@ export class PatientComponent implements OnInit {
           this.patient.DeletePatient(id_patient).subscribe(data=>{
             this.delpatients=data
             console.log(data)
+
+            this.getAllPatient()
           })
           swalWithBootstrapButtons.fire(
             'Supprimer!',
-            'Votre fichier a été supprimé avec succès.',
+            'Patient supprimé avec succès.',
             'success'
           )
+
+          this.getAllPatient()
         // } else if (
         //   /* Read more about handling dismissals below */
         //   result.dismiss === Swal.DismissReason.cancel
@@ -66,5 +69,12 @@ export class PatientComponent implements OnInit {
       })
 
 
+    }
+
+
+    getAllPatient(){
+      this.patient.getAllPatient().subscribe(data =>{
+        this.patients=data
+      })
     }
 }

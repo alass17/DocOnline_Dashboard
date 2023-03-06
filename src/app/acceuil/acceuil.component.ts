@@ -14,6 +14,9 @@ import { UserService } from '../_services/user/user.service';
   styleUrls: ['./acceuil.component.scss']
 })
 export class AcceuilComponent implements OnInit {
+
+  update=false
+
   public chart: any;
   patients: any;
   totalpatients: any;
@@ -25,10 +28,15 @@ export class AcceuilComponent implements OnInit {
   total: any;
 
   p:number=1
+  d:number=1
+  e:number=1
+  
   delUser: any;
   deluser: any;
   specs: any;
   objets: any;
+  delobjet: any;
+  delSpec:any
   constructor(private rdvService:RendezVousService,private patientService:PatientService,private professionnelService:DocteursService,
     private userService:UserService ,private specialiteService:SpecialiteService,private objetService:ObjetService) { 
 
@@ -57,16 +65,17 @@ export class AcceuilComponent implements OnInit {
       // this.total=data.length
     })
 
-    this.objetService.getAllObjet().subscribe(data=>{
-      this.objets=data
-      // this.total=data.length
-    })
+    
   }
 
   ngOnInit(): void {
     this.createChart();
-    
+    this.objetService.getAllObjet().subscribe(data=>{
+      this.objets=data
+      // this.total=data.length
+    })
    
+
   }
 
   createChart(){
@@ -125,6 +134,14 @@ export class AcceuilComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Utilisateur supprimé avec succès !!',
+          showConfirmButton: true,
+          timer: 1500,
+         
+        })
         //Swal.fire('Saved!', '', 'success');
         this.userService.DeleteUser(id).subscribe(data=>{
           this.deluser=data
@@ -139,6 +156,126 @@ export class AcceuilComponent implements OnInit {
     });
       
   }
+
+
+
+  popDeleteObjet(idobjet:number){
+    
+    Swal.fire({
+      position:'center',
+      title: 'Voulez-vous supprimer ?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Oui',
+      denyButtonText: `Non`,
+      // imageUrl:'../../assets/img/38213-error.gif',
+      // imageWidth:'  250px',
+      // imageHeight:'250px',
+      icon:'warning',
+      denyButtonColor:'red',
+      // cancelButtonText: 'Annuler',
+      cancelButtonColor:'red',
+      confirmButtonColor: 'green',
+      heightAuto: false,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Objet supprimé avec succès !!',
+          showConfirmButton: true,
+          timer: 1500,
+         
+        })
+        //Swal.fire('Saved!', '', 'success');
+        this.objetService.deleteobjet(idobjet).subscribe(data=>{
+          this.delobjet=data
+          console.log(data)
+          // this.reloadPage()
+        });
+        // this.reloadPage()
+      } else if (result.isDenied) {
+        //Swal.fire('Changes are not saved', '', 'info');
+      //  this.route.navigate(['tirage'])
+      }
+    });
+      
+  }
+
+
+
+  popDeleteSpec(idspec:number){
+    
+    Swal.fire({
+      position:'center',
+      title: 'Voulez-vous supprimer ?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Oui',
+      denyButtonText: `Non`,
+      icon:'warning',
+      // imageUrl:'../../assets/img/38213-error.gif',
+      // imageWidth:'  250px',
+      // imageHeight:'250px',
+      denyButtonColor:'red',
+      // cancelButtonText: 'Annuler',
+      cancelButtonColor:'red',
+      confirmButtonColor: 'green',
+      heightAuto: false,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Specialité supprimée avec succès !!',
+          showConfirmButton: true,
+          timer: 1500,
+         
+        })
+        //Swal.fire('Saved!', '', 'success');
+        this.specialiteService.deleteSpecialite(idspec).subscribe(data=>{
+          this.delSpec=data
+          console.log(data)
+         
+        });
+       
+      } else if (result.isDenied) {
+        //Swal.fire('Changes are not saved', '', 'info');
+      //  this.route.navigate(['tirage'])
+      }
+    });
+    this.getallobjet()
+  }
+  getallobjet(){
+    this.objetService.getAllObjet().subscribe(data=>{
+      this.objets=data
+      this.total=data.length
+  
+    })
+  }
+ 
+
+
+  UpdateObjet(form:any,idobjet:number){
+    Swal.fire({
+         
+      icon: 'success',
+      title: 'Email envoyé à votre compte',
+      showConfirmButton: false,
+    
+    })
+  const libelle:string=form.libelles
+  
+  console.log(libelle)
+    this.objetService.updateobjet(libelle,idobjet).subscribe(data =>{
+      console.log(data)
+      
+    })
+  }
+
+
     }
 
     

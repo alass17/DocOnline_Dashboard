@@ -20,4 +20,9 @@ export class SpecialiteService {
     return this.http.post(`http://localhost:8080/specialite/ajouter`,data);
 
   }
+
+
+  deleteSpecialite(idspec:any){
+    return this.http.delete(`http://localhost:8080/specialite/supprimer/${idspec}`)
+  }
 }

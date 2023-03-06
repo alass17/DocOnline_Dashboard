@@ -83,7 +83,7 @@ e:number=1
       
     });
 
-    this.patientService.getAllPatient().subscribe(data =>{
+    this.rdvservice.getAllRendezvousForProfessionnel(this.id).subscribe(data =>{
       this.patients=data
     })
 

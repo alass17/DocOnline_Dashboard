@@ -181,8 +181,13 @@
     </mat-list-item>
     
     <mat-list-item routerLinkActive="dashboardControleFacile" class="hover" routerLink="/rendezvous">
-      <mat-icon>school</mat-icon> <span>Rendez-vous</span>
+      <mat-icon>calendar_today</mat-icon> <span>Rendez-vous</span>
     </mat-list-item>
+
+
     
     </div>
+    <mat-list-item class="dec" (click)="logout()">
+      <mat-icon >exit_to_app</mat-icon> <span>Deconnexion</span>
+    </mat-list-item>
   </mat-nav-list>

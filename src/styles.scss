@@ -26,3 +26,18 @@ img.swal2-image {
     margin-top: 0px;
     margin-bottom: -45px;
 }
+// .ngx-pagination {
+//     /* margin-left: 0; */
+//     /* margin-bottom: 1rem; */
+//     // display: flex;
+//     // justify-content: center;
+//     // // width: 90%;
+// }
+
+.ngx-pagination .current {
+    padding: .1875rem .625rem;
+    background: #368E8C !important;
+    border-radius: 50%;
+    color: #fefefe;
+    cursor: default;
+}
